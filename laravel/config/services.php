@@ -29,5 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'mandrill' => [
+        'secret' => env('MAIL_PASSWORD'),
+    ],
+    'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
 
 ];
