@@ -1,0 +1,9 @@
++--------+----------+----------------+----------------+-----------------------------------------------+--------------+
+| Domain | Method   | URI            | Name           | Action                                        | Middleware   |
++--------+----------+----------------+----------------+-----------------------------------------------+--------------+
+|        | GET|HEAD | /              |                | Closure                                       | web          |
+|        | GET|HEAD | about          | about.index    | App\Http\Controllers\AboutController@index    | web          |
+|        | GET|HEAD | api/user       |                | Closure                                       | api,auth:api |
+|        | POST     | contact        | contact.store  | App\Http\Controllers\ContactController@store  | web          |
+|        | GET|HEAD | contact/create | contact.create | App\Http\Controllers\ContactController@create | web          |
++--------+----------+----------------+----------------+-----------------------------------------------+--------------+
