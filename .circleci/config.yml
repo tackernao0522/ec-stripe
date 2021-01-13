@@ -7,3 +7,5 @@ jobs:
       - checkout
       - run: sudo composer self-update --1
       - run: composer install -n --prefer-dist --working-dir=./laravel/
+      - run: cd laravel/; npm ci
+      - run: cd laravel/; npm run dev
