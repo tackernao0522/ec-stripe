@@ -27,3 +27,7 @@ Route::get('discounts', [
     'middleware' => 'auth',
     'uses' => 'DiscountsController@index',
 ]);
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function () {
+    Route::resource('products', 'ProductController');
+});
