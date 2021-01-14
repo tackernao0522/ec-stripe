@@ -33,3 +33,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::get('orders', 'ProductController@orders');
 });
 Route::get('plans', 'SubScriptionsController@index')->name('plans');
+Route::get('plans/subscribe/{planId}', 'SubscriptionsController@subscribe');
+Route::post('plans/process', 'SubscriptionsController@process')->name('plans.process');
