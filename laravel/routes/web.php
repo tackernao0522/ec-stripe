@@ -20,3 +20,8 @@ Route::get('contact', ['as' => 'contact', 'uses' => 'ContactController@create'])
 Route::post('contact', ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 
 Auth::routes();
+
+Route::get('discounts', [
+    'middleware' => 'auth',
+    'uses' => 'DiscountsController@index',
+]);
