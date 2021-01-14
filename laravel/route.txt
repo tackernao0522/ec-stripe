@@ -3,6 +3,7 @@
 +--------+-----------+-------------------------------+------------------+------------------------------------------------------------------------+---------------------------------------------------+
 |        | GET|HEAD  | /                             |                  | Closure                                                                | web                                               |
 |        | GET|HEAD  | about                         | about.index      | App\Http\Controllers\AboutController@index                             | web,auth                                          |
+|        | GET|HEAD  | admin/orders                  |                  | App\Http\Controllers\Admin\ProductController@orders                    | web,admin                                         |
 |        | POST      | admin/products                | products.store   | App\Http\Controllers\Admin\ProductController@store                     | web,admin                                         |
 |        | GET|HEAD  | admin/products                | products.index   | App\Http\Controllers\Admin\ProductController@index                     | web,admin                                         |
 |        | GET|HEAD  | admin/products/create         | products.create  | App\Http\Controllers\Admin\ProductController@create                    | web,admin                                         |
@@ -14,11 +15,11 @@
 |        | GET|HEAD  | contact                       | contact          | App\Http\Controllers\ContactController@create                          | web                                               |
 |        | POST      | contact                       | contact_store    | App\Http\Controllers\ContactController@store                           | web                                               |
 |        | GET|HEAD  | discounts                     |                  | App\Http\Controllers\DiscountsController@index                         | web,auth                                          |
-|        | GET|HEAD  | login                         | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest                                         |
 |        | POST      | login                         |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest                                         |
+|        | GET|HEAD  | login                         | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest                                         |
 |        | POST      | logout                        | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web                                               |
-|        | POST      | password/confirm              |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth                                          |
 |        | GET|HEAD  | password/confirm              | password.confirm | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web,auth                                          |
+|        | POST      | password/confirm              |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth                                          |
 |        | POST      | password/email                | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web                                               |
 |        | GET|HEAD  | password/reset                | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web                                               |
 |        | POST      | password/reset                | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web                                               |
