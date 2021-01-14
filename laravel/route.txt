@@ -6,8 +6,9 @@
 |        | GET|HEAD | api/user               |                  | Closure                                                                | api,auth:api |
 |        | GET|HEAD | contact                | contact          | App\Http\Controllers\ContactController@create                          | web          |
 |        | POST     | contact                | contact_store    | App\Http\Controllers\ContactController@store                           | web          |
-|        | GET|HEAD | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | GET|HEAD | discounts              |                  | App\Http\Controllers\DiscountsController@index                         | web,auth     |
 |        | POST     | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | GET|HEAD | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
 |        | POST     | logout                 | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web          |
 |        | GET|HEAD | password/confirm       | password.confirm | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web,auth     |
 |        | POST     | password/confirm       |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth     |
@@ -15,6 +16,6 @@
 |        | GET|HEAD | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web          |
 |        | POST     | password/reset         | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web          |
 |        | GET|HEAD | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web          |
-|        | GET|HEAD | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
 |        | POST     | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
 +--------+----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
