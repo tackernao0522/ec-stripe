@@ -34,4 +34,9 @@ return [
     ],
     'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
 
+    'stripe' => [
+        'model' => 'User',
+        'secret' => env('STRIPE_API_SECRET'),
+    ]
+
 ];
