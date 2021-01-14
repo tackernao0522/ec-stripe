@@ -32,3 +32,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::resource('products', 'ProductController');
     Route::get('orders', 'ProductController@orders');
 });
+Route::get('plans', 'SubScriptionsController@index')->name('plans');
