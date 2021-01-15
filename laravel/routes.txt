@@ -35,4 +35,5 @@
 |        | GET|HEAD  | products/{id}                 |                  | App\Http\Controllers\ProductController@show                            | web          |
 |        | POST      | register                      |                  | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
 |        | GET|HEAD  | register                      | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | POST      | stripe/webhook                |                  | App\Http\Controllers\StripeController@handleWebhook                    | web          |
 +--------+-----------+-------------------------------+------------------+------------------------------------------------------------------------+--------------+
