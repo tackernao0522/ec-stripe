@@ -35,3 +35,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
 Route::get('plans', 'SubScriptionsController@index')->name('plans');
 Route::get('plans/subscribe/{planId}', 'SubscriptionsController@subscribe');
 Route::post('plans/process', 'SubscriptionsController@process')->name('plans.process');
+Route::get('invoices', 'SubscriptionsController@invoices')->name('invoices');
+Route::get('invoices/download/{id}', 'SubscriptionsController@downloadInvoice');
