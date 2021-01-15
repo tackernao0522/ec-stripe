@@ -40,4 +40,9 @@ class User extends Authenticatable
     ];
 
     protected $dates = ['trial_ends_at', 'subscription_ends_at'];
+
+    public function carts()
+    {
+        return $this->hasMany('App\Cart')->where('complete', 0);
+    }
 }

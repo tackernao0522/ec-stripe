@@ -3,15 +3,20 @@
 +--------+-----------+-------------------------------+------------------+------------------------------------------------------------------------+--------------+
 |        | GET|HEAD  | /                             |                  | Closure                                                                | web          |
 |        | GET|HEAD  | about                         | about.index      | App\Http\Controllers\AboutController@index                             | web,auth     |
+|        | POST      | admin/admin/store             | admin.store      | App\Http\Controllers\Admin\ProductController@store                     | web,admin    |
 |        | GET|HEAD  | admin/orders                  |                  | App\Http\Controllers\Admin\ProductController@orders                    | web,admin    |
-|        | POST      | admin/products                | products.store   | App\Http\Controllers\Admin\ProductController@store                     | web,admin    |
 |        | GET|HEAD  | admin/products                | products.index   | App\Http\Controllers\Admin\ProductController@index                     | web,admin    |
+|        | POST      | admin/products                | products.store   | App\Http\Controllers\Admin\ProductController@store                     | web,admin    |
 |        | GET|HEAD  | admin/products/create         | products.create  | App\Http\Controllers\Admin\ProductController@create                    | web,admin    |
-|        | GET|HEAD  | admin/products/{product}      | products.show    | App\Http\Controllers\Admin\ProductController@show                      | web,admin    |
 |        | DELETE    | admin/products/{product}      | products.destroy | App\Http\Controllers\Admin\ProductController@destroy                   | web,admin    |
 |        | PUT|PATCH | admin/products/{product}      | products.update  | App\Http\Controllers\Admin\ProductController@update                    | web,admin    |
+|        | GET|HEAD  | admin/products/{product}      | products.show    | App\Http\Controllers\Admin\ProductController@show                      | web,admin    |
 |        | GET|HEAD  | admin/products/{product}/edit | products.edit    | App\Http\Controllers\Admin\ProductController@edit                      | web,admin    |
 |        | GET|HEAD  | api/user                      |                  | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | cart                          |                  | App\Http\Controllers\CartsController@index                             | web,auth     |
+|        | POST      | cart/complete                 | cart.complete    | App\Http\Controllers\CartsController@complete                          | web,auth     |
+|        | GET|HEAD  | cart/remove/{id}              |                  | App\Http\Controllers\CartsController@remove                            | web,auth     |
+|        | POST      | cart/store                    |                  | App\Http\Controllers\CartsController@store                             | web,auth     |
 |        | GET|HEAD  | contact                       | contact          | App\Http\Controllers\ContactController@create                          | web          |
 |        | POST      | contact                       | contact_store    | App\Http\Controllers\ContactController@store                           | web          |
 |        | GET|HEAD  | discounts                     |                  | App\Http\Controllers\DiscountsController@index                         | web,auth     |
@@ -20,8 +25,8 @@
 |        | POST      | login                         |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
 |        | GET|HEAD  | login                         | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
 |        | POST      | logout                        | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web          |
-|        | POST      | password/confirm              |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth     |
 |        | GET|HEAD  | password/confirm              | password.confirm | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web,auth     |
+|        | POST      | password/confirm              |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth     |
 |        | POST      | password/email                | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web          |
 |        | POST      | password/reset                | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web          |
 |        | GET|HEAD  | password/reset                | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web          |
