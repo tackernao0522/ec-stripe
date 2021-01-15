@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SubscriptionsController extends Controller
 {
@@ -55,5 +56,27 @@ class SubscriptionsController extends Controller
             ]
         );
         return redirect('invoices');
+    }
+
+    public function invoices()
+    {
+        $user = Auth::user();
+        return view('subscriptions.invoices', compact('user'));
+    }
+
+    public function downloadInvoices($id)
+    {
+        return Auth::user()->downloadInvoice(
+            $id,
+            [
+                'header' => 'We Dew Lawns',
+                'vendor' => 'WeDewLawans',
+                'product' => Auth::user()->stripe_plan,
+                'street' => '123 Lawn Drive',
+                'location' => 'Lawndale NC, 28076',
+                'phone' => '703.555.1212',
+                'url' => 'www.wedewlawns.com',
+            ]
+        );
     }
 }
