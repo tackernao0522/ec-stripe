@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('stripe_subscription')->nullable();
             $table->string('stripe_plan')->nullable();
+            $table->string('stripe_id')->nullable(); //追加
+            $table->string('card_brand')->nullable(); //追加
+            $table->string('card_last_four')->nullable(); //追加
             $table->rememberToken();
             $table->timestamps();
         });

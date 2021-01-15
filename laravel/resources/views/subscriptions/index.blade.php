@@ -1,12 +1,12 @@
 @extends('app')
-@seciton('intro')
+
 <div class="into">
     <div class="container">
         <h1>Make your neighbors envious!</h1>
         <p>Let the professionals at We Dew Lawns, Inc. service your lawn.</p>
     </div>
 </div>
-@endsection
+
 
 @section('content')
 <div class="col-xs-12 col-sm-4">
