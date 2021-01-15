@@ -79,4 +79,14 @@ class SubscriptionsController extends Controller
             ]
         );
     }
+
+    public function swapPlans(Request $request)
+    {
+        $planId = $request->get('plan_id');
+        if ($this->planNotAvailable($planId)) {
+            return redirect()->back()->withErrors('Plan is required');
+        }
+        Auth::user()->subscription('main')->swap($planId);
+        return redirect()->back()->withMessage('Plan changed!');
+    }
 }
