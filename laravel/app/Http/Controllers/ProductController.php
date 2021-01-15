@@ -9,8 +9,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $product = Product::orderBy('name', 'asc')->get();
-        return view('product.index', compact('product'));
+        $products = Product::orderBy('name', 'asc')->get();
+        return view('product.index', compact('products'));
     }
 
     public function show($id)
