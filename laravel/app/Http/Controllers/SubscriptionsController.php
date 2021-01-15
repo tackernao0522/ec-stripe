@@ -89,4 +89,11 @@ class SubscriptionsController extends Controller
         Auth::user()->subscription('main')->swap($planId);
         return redirect()->back()->withMessage('Plan changed!');
     }
+
+    public function cancelPlan(Request $request)
+    {
+        $planId = $request->get('plan_id');
+        Auth::user()->subscription('main')->cancel($planId);
+        return redirect('invoices')->with('message', 'Your plan has been cancelled');
+    }
 }

@@ -20,4 +20,23 @@
 
 <button type="submit" class="btn btn-default">Swap Plans</button>
 {!! Form::close() !!}
+
+@if (session('message'))
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-warning">
+            {{ session('message') }}
+        </div>
+    </div>
+</div>
+@endif
+
+{!! Form::open(['route' => 'plans.cancel', 'class' => 'form-inline']) !!}
+<select>
+    @foreach($user->invoices() as $invoice)
+    <option>{{ $invoice->date() }}{{ $invoice->total() }}</option>
+    @endforeach
+</select>
+<button type="submit" class="btn btn-danger">Cancel</button>
+{!! Form::close() !!}
 @endsection

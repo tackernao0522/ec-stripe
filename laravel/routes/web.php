@@ -38,3 +38,4 @@ Route::post('plans/process', 'SubscriptionsController@process')->name('plans.pro
 Route::get('invoices', 'SubscriptionsController@invoices')->name('invoices');
 Route::get('invoices/download/{id}', 'SubscriptionsController@downloadInvoice');
 Route::get('plans/swap', 'SubscriptionsController@swapPlans')->name('plans.swap');
+Route::post('plans/cancel', 'SubscriptionsController@cancelPlan')->name('plans.cancel');
