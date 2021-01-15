@@ -42,7 +42,20 @@
             <input type="text" class="form-control" id="card-cvc" placeholder="" size="6" value="{{ App::environment() == 'local' ? '111' : '' }}">
         </div>
     </div>
+
+    // クーポンの入力フォーム
+    <div class="row">
+        <div class="col-xs-12">
+            <label for="coupon" class="control-label">
+                Coupon Code
+            </label>
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="coupon" placeholder="Coupon Code" autofocus data-stripe="number" name="coupon" value="{{ App::enviromennt() == 'local' ? 'eQwjpyN0' : '' }}">
+        </div>
+    </div>
 </div>
+
 <div class="center-block form-actions">
     <button type="submit" class="submit-button btn btn-primary btn-lg">
         Complete Order
