@@ -35,7 +35,7 @@ return [
     'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
 
     'stripe' => [
-        'model' => 'User',
+        'model' => \App\User::class,
         'secret' => env('STRIPE_API_SECRET'),
     ]
 
